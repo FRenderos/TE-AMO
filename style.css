@@ -40,11 +40,6 @@ body {
 }
 
 
-@keyframes moveStars {
-  from { transform: translateY(0); }
-  to { transform: translateY(-200px); }
-}
-
 /* 💌 SOBRE */
 .envelope {
   margin: 80px auto;
