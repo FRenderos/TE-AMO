@@ -2,30 +2,16 @@ function abrirCarta() {
   // Mostrar contenido
   document.getElementById("contenido").style.display = "block";
 
+  // Ocultar botón abrir
+  document.getElementById("botonAbrir").style.display = "none";
+
   // Mensaje romántico
   document.getElementById("mensaje").innerHTML =
     "Eres lo más bonito que me ha pasado 💜🌷";
-
-  // NO reproducir automáticamente aquí (GitHub lo bloquea)
 }
-document.addEventListener("DOMContentLoaded", () => {
-
-  document.getElementById("botonAbrir").addEventListener("click", () => {
-
-    document.getElementById("contenido").style.display = "block";
-
-    document.getElementById("botonAbrir").style.display = "none";
-
-    document.getElementById("mensaje").innerHTML =
-      "Eres lo más bonito que me ha pasado 💜🌷";
-
-  });
-
-});
-
 
 function playMusic() {
-  let audio = document.getElementById("musica.mp3");
+  let audio = document.getElementById("musica");
 
   if (audio.paused) {
     audio.play();
