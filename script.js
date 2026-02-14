@@ -7,7 +7,7 @@ function abrirCarta() {
 
   // Mensaje romántico
   document.getElementById("mensaje").innerHTML =
-    "Eres lo más bonito que me ha pasado 💜🌷";
+    "Eres lo más bonito que me ha pasado 💜🌷, Gacias por llegar a mi vida en el momento adecuado, te amo como no tiene idea bebe, ojala que lo nuesto nosea temporal sino para toda la vida, te adoro.";
 }
 
 function playMusic() {
