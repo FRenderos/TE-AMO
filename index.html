@@ -1,45 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Yami 💜</title>
-
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Yami 💜</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<div id="carta">
-  <h2>💌 Te Amo Alma Mía</h2>
-  <button id="botonAbrir" onclick="abrirCarta()">Abrir carta</button>
+  <!-- Fondo estrellas -->
+  <div class="stars"></div>
 
-  <div id="contenido">
-    <p id="mensaje"></p>
+  <!-- Carta -->
+  <div class="envelope" id="envelope">
+    <div class="letter">
 
-    <h1>Te amo Yami 💜</h1>
+      <h2>💌 Te Amo Alma Mía 💜</h2>
 
-    <img src="foto1.jpg">
-    <img src="foto2.jpg">
+      <button id="botonAbrir" onclick="abrirCarta()">
+        Abrir carta ✨
+      </button>
+
+      <div id="contenido">
+        <p id="mensaje"></p>
+
+        <h1>Te amo Yami 💜</h1>
+
+        <!-- Galería -->
+        <div class="galeria">
+          <img src="foto1.jpg" />
+          <img src="foto2.jpg" />
+        </div>
+      </div>
+
+      <!-- Botón música -->
+      <button id="botonMusica" onclick="playMusic()">
+        🎵 Música para ti
+      </button>
+
+    </div>
   </div>
-</div>
 
-<!-- MÚSICA -->
-<audio id="musica" loop>
-  <source src="musica.mp3" type="audio/mpeg">
-</audio>
+  <!-- Tulipanes -->
+  <div class="ramo">
+    <div class="tulipan"></div>
+    <div class="tulipan"></div>
+    <div class="tulipan"></div>
+    <div class="tulipan"></div>
+    <div class="tulipan"></div>
+  </div>
 
-<script src="script.js"></script>
+  <!-- Música -->
+  <audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg" />
+  </audio>
 
-  <!-- Ramo de tulipanes -->
-<div class="ramo">
-  <div class="tulipan"></div>
-  <div class="tulipan"></div>
-  <div class="tulipan"></div>
-  <div class="tulipan"></div>
-  <div class="tulipan"></div>
-</div>
-
+  <script src="script.js"></script>
 </body>
 </html>
-
