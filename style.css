@@ -168,6 +168,24 @@ body {
 
 /* 📱 RESPONSIVE */
 @media(max-width:600px){
-  .envelope { width: 90%; }
+  .envelope {
+  width: min(420px, 90%);
   .galeria img { width: 110px; height: 150px; }
-}
+@media(max-width:600px){
+
+@media(max-width:600px){
+  .tulipan {
+    height: 110px;
+
+  #mensaje {
+    font-size: 16px;
+  }
+
+  .letter h2 {
+    font-size: 1.6em;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+  }
