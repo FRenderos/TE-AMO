@@ -1,120 +1,173 @@
 body {
   margin: 0;
-  background: radial-gradient(circle, #050013, #000);
-  color: white;
-  font-family: 'Courier New', cursive;
-  text-align: center;
+  font-family: "Georgia", serif;
+  background: radial-gradient(circle at bottom, #120022, #000);
   overflow: hidden;
+  text-align: center;
+  color: white;
+}
+
+/* ✨ ESTRELLAS */
+.stars {
+  position: fixed;
+  inset: 0;
+  background: url("https://i.imgur.com/7bK0y2T.png");
+  opacity: 0.25;
+  z-index: -2;
+  animation: moveStars 20s linear infinite;
+}
+
+@keyframes moveStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
+}
+
+/* 💌 SOBRE */
+.envelope {
+  margin: 80px auto;
+  width: 420px;
+  padding: 30px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 0 50px rgba(200,100,255,0.6);
+  backdrop-filter: blur(10px);
+  animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 30px rgba(200,100,255,0.4); }
+  to   { box-shadow: 0 0 70px rgba(255,105,180,0.8); }
 }
 
 /* CARTA */
-#carta {
-  margin-top: 80px;
-  background: rgba(255,255,255,0.05);
-  padding: 20px;
-  border-radius: 20px;
-  display: inline-block;
-  box-shadow: 0 0 30px purple;
+.letter h2 {
+  font-size: 2em;
+  text-shadow: 0 0 15px violet;
 }
 
-/* BOTON */
-button {
-  padding: 10px 20px;
+#botonAbrir {
+  padding: 12px 25px;
   font-size: 18px;
-  background: purple;
-  color: white;
+  background: linear-gradient(45deg, purple, hotpink);
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   cursor: pointer;
-  box-shadow: 0 0 10px violet;
+  color: white;
+  margin: 15px;
+  box-shadow: 0 0 20px violet;
+  transition: 0.3s;
 }
 
-button:hover {
+#botonAbrir:hover {
   transform: scale(1.1);
 }
 
-/* CONTENIDO OCULTO */
+/* TEXTO */
 #contenido {
   display: none;
 }
 
-/* FOTOS */
-img {
+#mensaje {
+  font-size: 18px;
+  line-height: 1.6;
+  text-shadow: 0 0 10px white;
+}
+
+/* GALERÍA */
+.galeria {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.galeria img {
   width: 150px;
-  border-radius: 15px;
-  margin: 10px;
-  box-shadow: 0 0 20px pink;
-  /* ===== CORAZONES FLOTANDO ===== */
+  height: 190px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 0 25px hotpink;
+  transition: 0.4s;
+}
+
+.galeria img:hover {
+  transform: scale(1.2);
+}
+
+/* 🎵 BOTÓN MÚSICA */
+#botonMusica {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  box-shadow: 0 0 15px violet;
+}
+
+/* 💖 CORAZONES */
 .heart {
   position: fixed;
   bottom: -20px;
   font-size: 20px;
-  color: pink;
   animation: floatUp 6s linear infinite;
   opacity: 0.8;
-  z-index: 0;
 }
 
 @keyframes floatUp {
-  from {
-    transform: translateY(0) scale(1);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(-110vh) scale(1.5);
-    opacity: 1;
-  }
+  from { transform: translateY(0); opacity: 0; }
+  to { transform: translateY(-110vh); opacity: 1; }
 }
 
-/* ===== RAMO DE TULIPANES ===== */
+/* 🌷 RAMO */
 .ramo {
   position: fixed;
-  bottom: 20px;
+  bottom: 15px;
   width: 100%;
   display: flex;
   justify-content: center;
   gap: 25px;
-  z-index: 1;
 }
 
 .tulipan {
   position: relative;
   width: 25px;
-  height: 140px;
+  height: 150px;
   animation: sway 3s ease-in-out infinite alternate;
 }
 
-/* Flor */
 .tulipan::before {
   content: "";
   position: absolute;
   top: 0;
   left: 50%;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   background: linear-gradient(#c77dff, #7b2cbf);
   border-radius: 50% 50% 0 0;
   transform: translateX(-50%);
-  box-shadow: 0 0 15px violet;
+  box-shadow: 0 0 20px violet;
 }
 
-/* Tallo */
 .tulipan::after {
   content: "";
   position: absolute;
-  top: 30px;
+  top: 35px;
   left: 50%;
   width: 4px;
-  height: 110px;
+  height: 120px;
   background: #2ecc71;
   transform: translateX(-50%);
-  border-radius: 5px;
 }
 
-/* Movimiento */
 @keyframes sway {
   from { transform: rotate(-4deg); }
   to { transform: rotate(4deg); }
 }
 
+/* 📱 RESPONSIVE */
+@media(max-width:600px){
+  .envelope { width: 90%; }
+  .galeria img { width: 110px; height: 150px; }
 }
