@@ -1,16 +1,17 @@
 body {
   margin: 0;
-  background: radial-gradient(circle, #050013, #000);
+  background: radial-gradient(circle at bottom, #120022, #000);
   overflow: hidden;
   font-family: 'Courier New', cursive;
   color: white;
   text-align: center;
 }
 
+/* ===== TEXTO ===== */
 .titulo {
   margin-top: 20px;
-  font-size: 20px;
-  text-shadow: 0 0 10px pink;
+  font-size: 22px;
+  text-shadow: 0 0 10px pink, 0 0 20px violet;
   animation: aparecer 3s ease;
 }
 
@@ -19,62 +20,107 @@ body {
   to {opacity:1;}
 }
 
-/* GALERIA */
+/* ===== GALERIA ===== */
 .galeria {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
   margin-top: 30px;
 }
 
 .galeria img {
-  width: 120px;
-  height: 160px;
+  width: 140px;
+  height: 190px;
   object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 0 20px pink;
-  transition: 0.3s;
+  border-radius: 20px;
+  box-shadow: 0 0 20px hotpink;
+  transition: 0.4s;
 }
 
 .galeria img:hover {
-  transform: scale(1.2);
+  transform: scale(1.3) rotate(2deg);
+  box-shadow: 0 0 40px violet;
 }
 
-/* TULIPANES */
+
+/* ===== CORAZONES FLOTANDO ===== */
+.corazon {
+  position: fixed;
+  color: pink;
+  font-size: 20px;
+  animation: flotar 8s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes flotar {
+  from {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 1;
+  }
+}
+
+/* ===== TULIPANES ===== */
 .tulipanes {
   position: absolute;
   bottom: 0;
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 60px;
+  gap: 70px;
+  pointer-events: none;
 }
 
 .tulipan {
   position: relative;
   width: 40px;
-  height: 120px;
+  height: 160px;
+  animation: mecer 4s ease-in-out infinite alternate;
 }
 
+/* FLOR */
 .tulipan::before {
   content: "";
   position: absolute;
-  width: 30px;
-  height: 30px;
-  background: purple;
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(#d66efd, #9b5de5);
   border-radius: 50% 50% 0 0;
-  left: 5px;
+  left: 2px;
   top: 0;
   box-shadow: 0 0 20px violet;
 }
 
+/* TALLO */
 .tulipan::after {
   content: "";
   position: absolute;
   width: 4px;
-  height: 120px;
-  background: green;
+  height: 140px;
+  background: #00ff9c;
   left: 18px;
   top: 30px;
+  border-radius: 2px;
 }
 
+/* HOJAS */
+.tulipan .hoja {
+  position: absolute;
+  width: 25px;
+  height: 12px;
+  background: #00ff9c;
+  border-radius: 50%;
+  top: 80px;
+}
+
+.tulipan .izq { left: -20px; transform: rotate(-30deg); }
+.tulipan .der { right: -20px; transform: rotate(30deg); }
+
+/* ANIMACIÓN TULIPANES */
+@keyframes mecer {
+  from { transform: rotate(-3deg); }
+  to { transform: rotate(3deg); }
+}
