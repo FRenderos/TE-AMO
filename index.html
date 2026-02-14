@@ -1,106 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<link rel="stylesheet" href="style.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para Yami 💜</title>
 
-<style>
-body {
-  background: #f5f0f5;
-  text-align: center;
-  font-family: 'Georgia', serif;
-  padding-top: 100px;
-}
-
-/* CARTA */
-#carta {
-  background: white;
-  width: 320px;
-  margin: auto;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  transition: 0.5s;
-}
-
-#botonAbrir {
-  padding: 10px 20px;
-  font-size: 18px;
-  background: purple;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-#contenido {
-  display: none;
-  margin-top: 20px;
-  font-size: 20px;
-}
-
-/* FOTOS */
-img {
-  width: 200px;
-  border-radius: 15px;
-  margin: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- MUSICA -->
-<audio id="musica" loop>
-  <source src="musica.mp3" type="audio/mpeg">
-</audio>
-
-<!-- CARTA -->
 <div id="carta">
-  <h1>💌 Te Amo Alma Mía 💜</h1>
+  <h2>💌 Te Amo Alma Mía</h2>
   <button id="botonAbrir" onclick="abrirCarta()">Abrir carta</button>
 
   <div id="contenido">
-    <p id="texto"></p>
+    <p id="mensaje"></p>
 
-    <h2>Te amo Yami 💜</h2>
+    <h1>Te amo Yami 💜</h1>
 
     <img src="foto1.jpg">
     <img src="foto2.jpg">
   </div>
 </div>
 
-<script>
-const musica = document.getElementById("musica");
-musica.volume = 0.15;
+<!-- MÚSICA -->
+<audio id="musica" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
 
-const mensaje = `Quién iba a pensar que un día éramos desconocidos y ahora celebramos nuestro primer 14 de febrero...
-
-Gracias por hacerme más feliz y por devolver el brillo a mis ojos, te amo mucho Yamitha, que lo nuestro no sea solo algo temporal sino algo para toda la vida 💜
-
-Yami, eres lo más bonito que me ha pasado.`;
-
-let i = 0;
-
-function abrirCarta() {
-  document.getElementById("botonAbrir").style.display = "none";
-  document.getElementById("contenido").style.display = "block";
-  musica.play();
-  escribirTexto();
-}
-
-function escribirTexto() {
-  if (i < mensaje.length) {
-    document.getElementById("texto").innerHTML += mensaje.charAt(i);
-    i++;
-    setTimeout(escribirTexto, 40); // velocidad de escritura
-  }
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
-
