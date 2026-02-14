@@ -26,9 +26,19 @@ function escribir() {
 // Música suave
 function playMusic() {
   const musica = document.getElementById("musica");
+
   musica.volume = 0.15;
-  musica.play();
+
+  musica.play()
+    .then(() => {
+      alert("🎶 Música sonando 💜");
+    })
+    .catch((error) => {
+      alert("❌ No se pudo reproducir: " + error);
+      console.log(error);
+    });
 }
+
 
 // Corazones flotando
 setInterval(() => {
