@@ -135,51 +135,111 @@ button {
 }
 
 /* ===== TULIPANES ===== */
-.ramo {
+/* ===== JARDÍN ROMÁNTICO EN CSS 🌷💜 ===== */
+
+.jardin {
   position: fixed;
-  bottom: 15px;
+  bottom: 0;
   width: 100%;
+  height: 220px;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
+  align-items: flex-end;
+  z-index: 5;
 }
 
-.tulipan {
+/* ===== TULIPÁN COMPLETO ===== */
+.tulipanRomantico {
   position: relative;
-  width: 25px;
-  height: 140px;
-  animation: sway 3s ease-in-out infinite alternate;
+  width: 40px;
+  height: 170px;
+  animation: balanceo 3s ease-in-out infinite alternate;
 }
 
-.tulipan::before {
-  content: "";
+/* PÉTALOS */
+.tulipanRomantico .flor {
   position: absolute;
   top: 0;
   left: 50%;
-  width: 38px;
-  height: 38px;
-  background: linear-gradient(#c77dff, #7b2cbf);
-  border-radius: 50% 50% 0 0;
+  width: 55px;
+  height: 55px;
+  background: radial-gradient(circle, #e0aaff, #7b2cbf);
+  border-radius: 50% 50% 20% 20%;
   transform: translateX(-50%);
-  box-shadow: 0 0 18px violet;
+  box-shadow: 0 0 20px violet;
 }
 
-.tulipan::after {
+/* PÉTALOS LATERALES */
+.tulipanRomantico .flor::before,
+.tulipanRomantico .flor::after {
   content: "";
   position: absolute;
-  top: 34px;
-  left: 50%;
-  width: 4px;
-  height: 110px;
-  background: #2ecc71;
-  transform: translateX(-50%);
-  border-radius: 10px;
+  width: 45px;
+  height: 45px;
+  background: radial-gradient(circle, #c77dff, #5a189a);
+  border-radius: 50% 50% 20% 20%;
+  top: 8px;
 }
 
-@keyframes sway {
+.tulipanRomantico .flor::before {
+  left: -20px;
+  transform: rotate(-15deg);
+}
+
+.tulipanRomantico .flor::after {
+  right: -20px;
+  transform: rotate(15deg);
+}
+
+/* TALLO */
+.tulipanRomantico .tallo {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  width: 6px;
+  height: 120px;
+  background: linear-gradient(#2ecc71, #145a32);
+  transform: translateX(-50%);
+  border-radius: 20px;
+}
+
+/* HOJAS */
+.tulipanRomantico .hoja {
+  position: absolute;
+  width: 30px;
+  height: 60px;
+  background: linear-gradient(#2ecc71, #1e8449);
+  border-radius: 50%;
+  top: 90px;
+}
+
+.tulipanRomantico .hoja.izq {
+  left: -20px;
+  transform: rotate(-25deg);
+}
+
+.tulipanRomantico .hoja.der {
+  right: -20px;
+  transform: rotate(25deg);
+}
+
+/* ANIMACIÓN */
+@keyframes balanceo {
   from { transform: rotate(-4deg); }
   to   { transform: rotate(4deg); }
 }
+
+/* ===== SUELO ROMÁNTICO ===== */
+.suelo {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to top, #145a32, transparent);
+  z-index: 4;
+}
+
 
 /* ===== CELULAR ===== */
 @media (max-width: 600px) {
