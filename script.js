@@ -8,9 +8,24 @@ function abrirCarta() {
 
   // NO reproducir automáticamente aquí (GitHub lo bloquea)
 }
+document.addEventListener("DOMContentLoaded", () => {
+
+  document.getElementById("botonAbrir").addEventListener("click", () => {
+
+    document.getElementById("contenido").style.display = "block";
+
+    document.getElementById("botonAbrir").style.display = "none";
+
+    document.getElementById("mensaje").innerHTML =
+      "Eres lo más bonito que me ha pasado 💜🌷";
+
+  });
+
+});
+
 
 function playMusic() {
-  let audio = document.getElementById("musica");
+  let audio = document.getElementById("musica.mp3");
 
   if (audio.paused) {
     audio.play();
