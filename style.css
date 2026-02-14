@@ -49,6 +49,10 @@ body {
   background: rgba(255,255,255,0.06);
   box-shadow: 0 0 40px rgba(200,100,255,0.6);
   backdrop-filter: blur(10px);
+
+  /* ✅ CORRECCIÓN: para que no tape el jardín */
+  position: relative;
+  z-index: 10;
 }
 
 .letter h2 {
@@ -134,8 +138,9 @@ button {
   to   { transform: translateY(-110vh); opacity: 1; }
 }
 
-/* ===== TULIPANES ===== */
-/* ===== JARDÍN ROMÁNTICO EN CSS 🌷💜 ===== */
+/* ===================================================== */
+/* ===== 🌷 JARDÍN ROMÁNTICO EN CSS 💜 ===== */
+/* ===================================================== */
 
 .jardin {
   position: fixed;
@@ -240,8 +245,10 @@ button {
   z-index: 4;
 }
 
+/* ===================================================== */
+/* ===== 📱 RESPONSIVE PARA CELULAR ===== */
+/* ===================================================== */
 
-/* ===== CELULAR ===== */
 @media (max-width: 600px) {
 
   .letter h2 {
@@ -257,11 +264,19 @@ button {
     height: 160px;
   }
 
-  .ramo {
+  /*clases reales del jardín */
+  .jardin {
     gap: 12px;
+    height: 160px;
   }
 
-  .tulipan {
+  .tulipanRomantico {
     height: 110px;
+    width: 30px;
+  }
+
+  .tulipanRomantico .flor {
+    width: 40px;
+    height: 40px;
   }
 }
