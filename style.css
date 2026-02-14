@@ -11,11 +11,34 @@ body {
 .stars {
   position: fixed;
   inset: 0;
-  background: url("https://i.imgur.com/7bK0y2T.png");
-  opacity: 0.25;
+  background: transparent;
   z-index: -2;
-  animation: moveStars 20s linear infinite;
 }
+
+.stars::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow:
+    10vw 20vh white,
+    30vw 40vh white,
+    50vw 10vh white,
+    70vw 80vh white,
+    90vw 30vh white,
+    20vw 70vh white,
+    40vw 90vh white,
+    60vw 50vh white,
+    80vw 60vh white;
+  animation: twinkle 4s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+
 
 @keyframes moveStars {
   from { transform: translateY(0); }
