@@ -1,38 +1,207 @@
-/* 📱 RESPONSIVE PARA CELULAR */
+/* ===== GENERAL ===== */
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background: radial-gradient(circle at bottom, #120022, #000);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* ===== ESTRELLAS ===== */
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+}
+
+.stars::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow:
+    10vw 20vh white,
+    30vw 40vh white,
+    50vw 10vh white,
+    70vw 80vh white,
+    90vw 30vh white,
+    20vw 70vh white,
+    40vw 90vh white,
+    60vw 50vh white,
+    80vw 60vh white;
+  animation: twinkle 4s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.3; }
+  to   { opacity: 1; }
+}
+
+/* ===== CARTA ===== */
+.envelope {
+  margin: 70px auto;
+  width: min(420px, 90%);
+  padding: 30px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.06);
+  box-shadow: 0 0 40px rgba(200,100,255,0.6);
+  backdrop-filter: blur(10px);
+}
+
+.letter h2 {
+  font-size: 2em;
+  text-shadow: 0 0 15px violet;
+}
+
+/* ===== BOTONES ===== */
+button {
+  padding: 12px 25px;
+  font-size: 17px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  color: white;
+  margin: 10px;
+  transition: 0.3s;
+}
+
+#botonAbrir {
+  background: linear-gradient(45deg, purple, hotpink);
+  box-shadow: 0 0 20px violet;
+}
+
+#botonAbrir:hover {
+  transform: scale(1.08);
+}
+
+#botonMusica {
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 0 15px violet;
+}
+
+#botonMusica:hover {
+  transform: scale(1.05);
+}
+
+/* ===== TEXTO ===== */
+#contenido {
+  display: none;
+}
+
+#mensaje {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: 15px;
+  text-shadow: 0 0 10px white;
+}
+
+/* ===== GALERÍA ===== */
+.galeria {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.galeria img {
+  width: 150px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 0 25px hotpink;
+  transition: 0.4s;
+}
+
+.galeria img:hover {
+  transform: scale(1.15);
+}
+
+/* ===== CORAZONES ===== */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  animation: floatUp 6s linear infinite;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 0; }
+  to   { transform: translateY(-110vh); opacity: 1; }
+}
+
+/* ===== TULIPANES ===== */
+.ramo {
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tulipan {
+  position: relative;
+  width: 25px;
+  height: 140px;
+  animation: sway 3s ease-in-out infinite alternate;
+}
+
+.tulipan::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(#c77dff, #7b2cbf);
+  border-radius: 50% 50% 0 0;
+  transform: translateX(-50%);
+  box-shadow: 0 0 18px violet;
+}
+
+.tulipan::after {
+  content: "";
+  position: absolute;
+  top: 34px;
+  left: 50%;
+  width: 4px;
+  height: 110px;
+  background: #2ecc71;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+@keyframes sway {
+  from { transform: rotate(-4deg); }
+  to   { transform: rotate(4deg); }
+}
+
+/* ===== CELULAR ===== */
 @media (max-width: 600px) {
 
-  .envelope {
-    width: 90%;
-    margin-top: 40px;
-    padding: 20px;
+  .letter h2 {
+    font-size: 1.6em;
   }
 
   #mensaje {
     font-size: 16px;
   }
 
-  .letter h2 {
-    font-size: 1.6em;
-  }
-
-  h1 {
-    font-size: 1.5em;
-  }
-
-  .galeria {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .galeria img {
-    width: 110px;
-    height: 150px;
+    width: 120px;
+    height: 160px;
+  }
+
+  .ramo {
+    gap: 12px;
   }
 
   .tulipan {
     height: 110px;
   }
-  overflow-x: hidden;
-overflow-y: auto;
-
 }
